@@ -1,0 +1,227 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeFile="MasterPage.master.cs" Inherits="MasterPage" %>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<script type="text/javascript">
+    function btclick(buttomname) {
+        if (confirm("是否确定要考勤？"))
+            return true;
+        else
+            return false; 
+            
+             
+    }
+</script>
+<head runat="server">
+<style type="text/css">
+html
+{
+    background-color:#669999;
+    font:14px Arial,Sans-Serif;
+    }
+
+.bg
+{
+    position:fixed;
+    top:0px;
+    left:0px;
+    right:0px;
+    bottom:0px;
+    z-index:-1;
+    }
+.bg > img
+{
+    width:100%;
+    height:100%;
+    border:0;
+    }
+.alltable
+{
+    border:1px solid #000000;
+    padding: 1px; 
+    margin: 1px;
+    }
+.alltable tr td
+{
+    border: 1px solid #000000;
+    text-align:center;
+    }
+.content
+{
+    margin:auto;
+    width:960px;
+    font-size:12px;
+    /*border:2px ridge lightgreen;*/
+    }
+.headdiv
+{
+    margin:auto;
+    width:960px;
+    height:30px;
+    /*background-color:Red;*/
+    font-size:14px;
+    }
+.floatright
+{
+    float:right;
+    }
+.toprow
+{
+    padding:0px;
+    margin:0px;
+    height:30px;
+    
+        }
+ .clear
+ {
+     clear:both;
+     }
+     .nostyle
+{
+    list-style-type:none;
+    }
+.bottomrow
+{
+    padding:1px;
+    margin-top:5px;
+    height:auto;
+    background-color:white;
+
+    }
+.layout
+{
+    filter:alpha(opacity=70); 
+    opacity:0.7;
+    }
+.menutext
+{
+    text-align:center;
+
+}
+   
+    .menutext
+    {
+        text-align: center;
+    }
+
+</style>
+    <title>山东风范电子科技有限公司</title>
+    <asp:ContentPlaceHolder id="head" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body>
+
+    <form id="form1" runat="server">
+    <div class="headdiv">
+        <table  style="width: 80%; float:right">
+            <tr>
+                <td style="width: 300px">
+                   
+                       <asp:Panel ID="Panel1" runat="server">
+                       
+            <asp:Label ID="Label4" runat="server" Text="上班时间"></asp:Label>
+            <asp:TextBox ID="TBeginTime" runat="server" Width="56px"></asp:TextBox>
+            <asp:RegularExpressionValidator ID="RegularExpressionValidator1" runat="server" 
+                ControlToValidate="TBeginTime" ErrorMessage="RegularExpressionValidator" 
+                ValidationExpression="[0-9]{1,2}\:[0-9]{1,2}" ValidationGroup="newtime" 
+                           ForeColor="Red">*</asp:RegularExpressionValidator>
+                           <asp:Label ID="Label5" runat="server" Text="下班时间"></asp:Label>
+                           <asp:TextBox ID="TEndTime" runat="server" Width="56px"></asp:TextBox>
+                           <asp:RegularExpressionValidator ID="RegularExpressionValidator2" runat="server" 
+                               ControlToValidate="TEndTime" ErrorMessage="RegularExpressionValidator" 
+                               ForeColor="Red" ValidationExpression="[0-9]{1,2}\:[0-9]{1,2}" 
+                               ValidationGroup="newtime">*</asp:RegularExpressionValidator>
+            <asp:SqlDataSource ID="SqlDataSource2" runat="server" 
+                ConnectionString="<%$ ConnectionStrings:ConnectionStringGridView %>" 
+                DeleteCommand="DELETE FROM [ob_time] WHERE [timeId] = ?" 
+                InsertCommand="INSERT INTO [ob_time] ([timeId], [begintime], [endtime]) VALUES (?, ?, ?)" 
+                ProviderName="<%$ ConnectionStrings:ConnectionStringGridView.ProviderName %>" 
+                SelectCommand="SELECT * FROM [ob_time]" 
+                UpdateCommand="UPDATE [ob_time] SET [begintime] = ?, [endtime] = ? WHERE [timeId] = ?">
+                <DeleteParameters>
+                    <asp:Parameter Name="timeId" Type="Int32" />
+                </DeleteParameters>
+                <InsertParameters>
+                    <asp:Parameter Name="timeId" Type="Int32" />
+                    <asp:Parameter Name="begintime" Type="String" />
+                    <asp:Parameter Name="endtime" Type="String" />
+                </InsertParameters>
+                <UpdateParameters>
+                    <asp:Parameter Name="begintime" Type="String" />
+                    <asp:Parameter Name="endtime" Type="String" />
+                    <asp:Parameter Name="timeId" Type="Int32" />
+                </UpdateParameters>
+            </asp:SqlDataSource>
+            </asp:Panel>
+        
+</td>
+                <td rowspan="2">
+                   
+            <asp:Button ID="Button1" runat="server" Text="保存修改" onclick="Button1_Click" 
+                ValidationGroup="newtime" />
+                </td>
+               <td rowspan="2">
+                   
+               
+                  <asp:ScriptManager ID="ScriptManager1" runat="server">
+             </asp:ScriptManager>
+                <asp:UpdatePanel ID="UpdatePanel1" runat="server">
+                   <ContentTemplate><asp:Label CssClass="floatright" ID="Label1" runat="server" 
+                           ForeColor="White"></asp:Label>  
+                  <asp:Timer ID="Timer1" runat="server" Interval="1000"></asp:Timer>
+               </ContentTemplate>    
+                </asp:UpdatePanel>
+                </td>
+                <td rowspan="2">
+                   
+        <asp:Button CssClass="floatright" ID="Bbegin" runat="server" Text="上班考勤" OnClientClick="return confirm('是否确定要考勤？');" onclick="Bbegin_Click" />
+        
+                </td>
+                <td rowspan="2">
+                
+                        
+        <asp:Button CssClass="floatright" ID="Bend" runat="server" Text="下班考勤" OnClientClick="return confirm('是否确定要考勤？');" onclick="Bend_Click" />
+        
+                </td>
+                <td rowspan="2">
+              
+                <asp:LoginStatus CssClass="floatright" ID="LoginStatus1" runat="server" 
+            Font-Bold="True" LogoutText="安全退出" ForeColor="Red" />   
+        
+                </td>
+            </tr>
+
+        </table>
+        
+        <div style="font-family: 宋体, Arial, Helvetica, sans-serif; font-weight: bold; font-style: normal; color: #FFFFFF">欢迎你，<asp:Label 
+                ID="Label2" runat="server" Text="Label"></asp:Label>
+            
+
+        </div>
+    </div>
+    <div class="content">
+    <div>
+    
+        <asp:Menu ID="Menu1" runat="server" Orientation="Horizontal" Width="100%" Height="100%" 
+            StaticEnableDefaultPopOutImage="False" Font-Bold="True" 
+            CssClass="menutext" 
+            StaticSubMenuIndent="16px" >
+            <StaticMenuItemStyle HorizontalPadding="20px" />
+        </asp:Menu>
+         
+           <asp:SqlDataSource ID="SqlDataSource1" runat="server" 
+            ConnectionString="<%$ ConnectionStrings:ConnectionStringGridView %>" 
+            ProviderName="<%$ ConnectionStrings:ConnectionStringGridView.ProviderName %>" 
+            SelectCommand="SELECT * FROM [os_MenuPremiss] ORDER BY [ParentMenuId],[MenuTab]">
+        </asp:SqlDataSource>
+    </div>
+    <div class="toprow">
+        <asp:ContentPlaceHolder id="ContentPlaceHolder1" runat="server">    
+        </asp:ContentPlaceHolder>
+    <br class="clear" />
+    </div>
+    </div>
+    </form>
+</body>
+</html>

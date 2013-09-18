@@ -1,0 +1,98 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="weekplanDataSet" targetNamespace="http://tempuri.org/weekplanDataSet.xsd" xmlns:mstns="http://tempuri.org/weekplanDataSet.xsd" xmlns="http://tempuri.org/weekplanDataSet.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections>
+          <Connection AppSettingsObjectName="Web.config" AppSettingsPropertyName="ConnectionStringGridView" ConnectionStringObject="" IsAppSettingsProperty="true" Modifier="Assembly" Name="ConnectionStringGridView (Web.config)" PropertyReference="AppConfig.System.Configuration.ConfigurationManager.0.ConnectionStrings.ConnectionStringGridView.ConnectionString" Provider="System.Data.OleDb" />
+        </Connections>
+        <Tables>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="v_weekplanTableAdapter" Name="v_weekplan">
+            <MainSource>
+              <DbSource ConnectionRef="ConnectionStringGridView (Web.config)" DbObjectName="u911110oa.dbo.v_weekplan" DbObjectType="View" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="false">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>SELECT PlanId, PlanDuration, PlanContent, Subitemheader, DepartmentName, UserFullName, Notes, Plandate, DepartmentId, UserId FROM dbo.v_weekplan</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="PlanId" DataSetColumn="PlanId" />
+              <Mapping SourceColumn="PlanDuration" DataSetColumn="PlanDuration" />
+              <Mapping SourceColumn="PlanContent" DataSetColumn="PlanContent" />
+              <Mapping SourceColumn="Subitemheader" DataSetColumn="Subitemheader" />
+              <Mapping SourceColumn="DepartmentName" DataSetColumn="DepartmentName" />
+              <Mapping SourceColumn="UserFullName" DataSetColumn="UserFullName" />
+              <Mapping SourceColumn="Notes" DataSetColumn="Notes" />
+              <Mapping SourceColumn="Plandate" DataSetColumn="Plandate" />
+              <Mapping SourceColumn="DepartmentId" DataSetColumn="DepartmentId" />
+              <Mapping SourceColumn="UserId" DataSetColumn="UserId" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
+        </Tables>
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="weekplanDataSet" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="False">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="v_weekplan">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="PlanId" type="xs:int" />
+              <xs:element name="PlanDuration" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="PlanContent" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="2147483647" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Subitemheader" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="2147483647" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="DepartmentName" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="UserFullName" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="10" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Notes" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="2147483647" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Plandate" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="DepartmentId" type="xs:int" minOccurs="0" />
+              <xs:element name="UserId" type="xs:int" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

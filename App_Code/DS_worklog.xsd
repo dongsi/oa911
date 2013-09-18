@@ -1,0 +1,148 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="DS_worklog" targetNamespace="http://tempuri.org/DS_worklog.xsd" xmlns:mstns="http://tempuri.org/DS_worklog.xsd" xmlns="http://tempuri.org/DS_worklog.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections>
+          <Connection AppSettingsObjectName="Web.config" AppSettingsPropertyName="ConnectionStringGridView" ConnectionStringObject="" IsAppSettingsProperty="true" Modifier="Assembly" Name="ConnectionStringGridView (Web.config)" PropertyReference="AppConfig.System.Configuration.ConfigurationManager.0.ConnectionStrings.ConnectionStringGridView.ConnectionString" Provider="System.Data.OleDb" />
+        </Connections>
+        <Tables>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="v_worklogTableAdapter" GeneratorDataComponentClassName="v_worklogTableAdapter" Name="v_worklog" UserDataComponentName="v_worklogTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="ConnectionStringGridView (Web.config)" DbObjectName="u911110oa.dbo.v_worklog" DbObjectType="View" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="false" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT WorkLogId, DepartmentName, ProjectName, ProjectManager, Associater, WorkDate, WorkContent, ProjectContent, EndOf, UseTime, PlanEndDate, LogDate, UserFullName, Review, NextPlan FROM v_worklog</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="WorkLogId" DataSetColumn="WorkLogId" />
+              <Mapping SourceColumn="DepartmentName" DataSetColumn="DepartmentName" />
+              <Mapping SourceColumn="ProjectName" DataSetColumn="ProjectName" />
+              <Mapping SourceColumn="ProjectManager" DataSetColumn="ProjectManager" />
+              <Mapping SourceColumn="Associater" DataSetColumn="Associater" />
+              <Mapping SourceColumn="WorkDate" DataSetColumn="WorkDate" />
+              <Mapping SourceColumn="WorkContent" DataSetColumn="WorkContent" />
+              <Mapping SourceColumn="ProjectContent" DataSetColumn="ProjectContent" />
+              <Mapping SourceColumn="EndOf" DataSetColumn="EndOf" />
+              <Mapping SourceColumn="UseTime" DataSetColumn="UseTime" />
+              <Mapping SourceColumn="PlanEndDate" DataSetColumn="PlanEndDate" />
+              <Mapping SourceColumn="LogDate" DataSetColumn="LogDate" />
+              <Mapping SourceColumn="UserFullName" DataSetColumn="UserFullName" />
+              <Mapping SourceColumn="Review" DataSetColumn="Review" />
+              <Mapping SourceColumn="NextPlan" DataSetColumn="NextPlan" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
+        </Tables>
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="DS_worklog" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="False" msprop:Generator_DataSetName="DS_worklog" msprop:Generator_UserDSName="DS_worklog">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="v_worklog" msprop:Generator_TableClassName="v_worklogDataTable" msprop:Generator_TableVarName="tablev_worklog" msprop:Generator_TablePropName="v_worklog" msprop:Generator_RowDeletingName="v_worklogRowDeleting" msprop:Generator_UserTableName="v_worklog" msprop:Generator_RowChangingName="v_worklogRowChanging" msprop:Generator_RowEvHandlerName="v_worklogRowChangeEventHandler" msprop:Generator_RowDeletedName="v_worklogRowDeleted" msprop:Generator_RowEvArgName="v_worklogRowChangeEvent" msprop:Generator_RowChangedName="v_worklogRowChanged" msprop:Generator_RowClassName="v_worklogRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="WorkLogId" msprop:Generator_ColumnVarNameInTable="columnWorkLogId" msprop:Generator_ColumnPropNameInRow="WorkLogId" msprop:Generator_ColumnPropNameInTable="WorkLogIdColumn" msprop:Generator_UserColumnName="WorkLogId" type="xs:int" />
+              <xs:element name="DepartmentName" msprop:Generator_ColumnVarNameInTable="columnDepartmentName" msprop:Generator_ColumnPropNameInRow="DepartmentName" msprop:Generator_ColumnPropNameInTable="DepartmentNameColumn" msprop:Generator_UserColumnName="DepartmentName" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="ProjectName" msprop:Generator_ColumnVarNameInTable="columnProjectName" msprop:Generator_ColumnPropNameInRow="ProjectName" msprop:Generator_ColumnPropNameInTable="ProjectNameColumn" msprop:Generator_UserColumnName="ProjectName" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="ProjectManager" msprop:Generator_ColumnVarNameInTable="columnProjectManager" msprop:Generator_ColumnPropNameInRow="ProjectManager" msprop:Generator_ColumnPropNameInTable="ProjectManagerColumn" msprop:Generator_UserColumnName="ProjectManager" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Associater" msprop:Generator_ColumnVarNameInTable="columnAssociater" msprop:Generator_ColumnPropNameInRow="Associater" msprop:Generator_ColumnPropNameInTable="AssociaterColumn" msprop:Generator_UserColumnName="Associater" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="WorkDate" msprop:Generator_ColumnVarNameInTable="columnWorkDate" msprop:Generator_ColumnPropNameInRow="WorkDate" msprop:Generator_ColumnPropNameInTable="WorkDateColumn" msprop:Generator_UserColumnName="WorkDate" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="WorkContent" msprop:Generator_ColumnVarNameInTable="columnWorkContent" msprop:Generator_ColumnPropNameInRow="WorkContent" msprop:Generator_ColumnPropNameInTable="WorkContentColumn" msprop:Generator_UserColumnName="WorkContent" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="1073741823" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="ProjectContent" msprop:Generator_ColumnVarNameInTable="columnProjectContent" msprop:Generator_ColumnPropNameInRow="ProjectContent" msprop:Generator_ColumnPropNameInTable="ProjectContentColumn" msprop:Generator_UserColumnName="ProjectContent" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="1073741823" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="EndOf" msprop:Generator_ColumnVarNameInTable="columnEndOf" msprop:Generator_ColumnPropNameInRow="EndOf" msprop:Generator_ColumnPropNameInTable="EndOfColumn" msprop:Generator_UserColumnName="EndOf" type="xs:boolean" minOccurs="0" />
+              <xs:element name="UseTime" msprop:Generator_ColumnVarNameInTable="columnUseTime" msprop:Generator_ColumnPropNameInRow="UseTime" msprop:Generator_ColumnPropNameInTable="UseTimeColumn" msprop:Generator_UserColumnName="UseTime" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="20" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="PlanEndDate" msprop:Generator_ColumnVarNameInTable="columnPlanEndDate" msprop:Generator_ColumnPropNameInRow="PlanEndDate" msprop:Generator_ColumnPropNameInTable="PlanEndDateColumn" msprop:Generator_UserColumnName="PlanEndDate" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="20" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="LogDate" msprop:Generator_ColumnVarNameInTable="columnLogDate" msprop:Generator_ColumnPropNameInRow="LogDate" msprop:Generator_ColumnPropNameInTable="LogDateColumn" msprop:Generator_UserColumnName="LogDate" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="UserFullName" msprop:Generator_ColumnVarNameInTable="columnUserFullName" msprop:Generator_ColumnPropNameInRow="UserFullName" msprop:Generator_ColumnPropNameInTable="UserFullNameColumn" msprop:Generator_UserColumnName="UserFullName" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="10" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Review" msprop:Generator_ColumnVarNameInTable="columnReview" msprop:Generator_ColumnPropNameInRow="Review" msprop:Generator_ColumnPropNameInTable="ReviewColumn" msprop:Generator_UserColumnName="Review" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="1073741823" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="NextPlan" msprop:Generator_ColumnVarNameInTable="columnNextPlan" msprop:Generator_ColumnPropNameInRow="NextPlan" msprop:Generator_ColumnPropNameInTable="NextPlanColumn" msprop:Generator_UserColumnName="NextPlan" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="1073741823" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+    <xs:unique name="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:v_worklog" />
+      <xs:field xpath="mstns:WorkLogId" />
+    </xs:unique>
+  </xs:element>
+</xs:schema>
